@@ -1,0 +1,31 @@
+{
+  "name": "template-basic-gulp",
+  "version": "0.0.1",
+  "description": "gulp template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelica-keiskei/template-basic-gulp.git"
+  },
+  "author": "angelica-k",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angelica-keiskei/template-basic-gulp/issues"
+  },
+  "homepage": "https://github.com/angelica-keiskei/template-basic-gulp#readme",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-exec": "^3.0.1",
+    "gulp-plumber": "^1.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-webserver": "^0.9.1"
+  },
+  "devDependencies": {
+    "gulp-clean-css": "^3.9.3"
+  }
+}
