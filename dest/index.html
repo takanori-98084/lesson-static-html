@@ -1,13 +1,35 @@
 <!doctype html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <title>StaticPages</title>
     <link rel='stylesheet' href='style.css'/>
   </head>
-  <body>
-    <header>
+  <body id='page--top'>
+    <header id='static-pages-header'>
+      <!-- お約束の一つ。ロゴをClickしたらTOPに戻れる -->
+      <!-- Logoにh1を使うシーンは限られる -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/StaticPages-logo.png" alt="logo" >
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">2 Column</a></li>
+          <li><a href="#">JS-Games</a></li>
+          <li><a href="#">Responsive</a></li>
+        </ul>
+      </nav>
     </header>
-      <h1> hello world </h1>
+    <main>
+      <section class='full-bg'>
+      </section>
+    </main>
     <footer>
+      <small>
+        (C)2018 static-pages
+      </small>
     </footer>
   </body>
 </html>
