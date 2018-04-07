@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+// size
+$base_width: 1000;
+
+// color
+$bg_color: #fff;
+$base_color: #333;
+//$blue: #004893;
+$dblue: #002953;
+$red: #99020a;
+//$dgray: #34343b;
+$black: #000;
+$yellow: #f1bc18;
+
+// font
+$base_font_family: "YuGothic", "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+$base_font_size: 62.5%;
+
+// breakpoint
+$bp_01: 1380;
+$bp_02: 1280;
+$bp_03: 1180;
+$bp_04: 1080;
+$bp_05: 980;
+$bp_06: 930;
+$bp_07: 480;
+$bp_08: 440;
+$bp_09: 640;
+$bp_10: 780;
+$bp_11: 700;
+$bp_12: 1535;
