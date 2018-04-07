@@ -1,2 +1,127 @@
 @charset "utf-8";
 // サイトに共通のレイアウト
+
+// サイトの共通ヘッダ
+#static-pages-header{
+  height: 83px;
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  box-sizing: border-box;
+  
+  .logo {
+    height: 83px;
+    float: left;
+    display: table;
+    a {
+      display: table-cell;
+      vertical-align: middle;
+      img {
+        width: 386px;
+        height: 83px; 
+      }
+    }
+  }
+  
+  @include mediaquery_w($bp_05 + px) {
+    background-color: #333;
+  }
+  
+  nav {
+    float: right;
+    ul {
+      list-style-type: none;
+      li {
+        float: left;
+        display: table;
+        height: 60px;
+        a {
+          position: relative;
+          display: table-cell;
+          vertical-align: middle;
+          padding: 0 22px;
+          color: #FFF;
+          text-decoration: none;
+        }
+      }
+      li:nth-last-child(1)::after {
+        content: '';
+        display: table;
+        clear: both;        
+      }
+    }
+  }
+}
+
+#pc-nav {
+  @include mediaquery_w($bp_05 + px) {
+    display: none;
+  }
+}
+#sp-nav {
+  @include mediaquery_w($bp_05 + px) {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 60px;
+    top: 50%;
+    right: 0;
+    margin-right: 10px;
+    transition-duration: .4s;
+    cursor: pointer;
+    z-index: 9999;
+    margin-top: -30px;
+    
+    .icon {
+      transition-duration: 125ms;
+      position: absolute;
+      width: 21px;
+      height: 2px;
+      top: 28px;
+      left: 15px;
+      background-color: #fff;
+      &:before, &:after{
+        transition-duration: 125ms;
+        position: absolute;
+        width: 21px;
+        height: 2px;
+        background-color: #fff;
+        content: "";
+      }
+      &:before {
+        top: -9px;
+        left: 0;
+      }
+      &:after {
+        top: 9px;
+        left: 0;
+      }
+    }
+    &.open{
+    transition-duration: .3s;
+    transform: rotate(180deg);
+    .icon{
+        transition-duration: 0.4s;
+        background-color: transparent;
+        &:before{
+            transition-duration: 0.4s;
+            top: 0;
+            transform: rotate(45deg);
+        }
+        &:after{
+            transition-duration: 0.4s;
+            top: 0;
+            transform: rotate(-45deg);
+        }
+    }
+}
+  }
+  display: none;
+}
+
+#static-pages-header::after {
+  content: '';
+  display: table;
+  clear: both;
+}

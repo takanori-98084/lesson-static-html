@@ -935,9 +935,8 @@ template {
   height: 83px;
   position: absolute;
   top: 0;
-  left: 10%;
   z-index: 9999;
-  width: 80%;
+  width: 100%;
   box-sizing: border-box; }
   #static-pages-header .logo {
     height: 83px;
@@ -949,6 +948,9 @@ template {
       #static-pages-header .logo a img {
         width: 386px;
         height: 83px; }
+  @media only screen and (max-width: 980px) {
+    #static-pages-header {
+      background-color: #333; } }
   #static-pages-header nav {
     float: right; }
     #static-pages-header nav ul {
@@ -962,11 +964,67 @@ template {
           display: table-cell;
           vertical-align: middle;
           padding: 0 22px;
-          color: #DDD; }
+          color: #FFF;
+          text-decoration: none; }
       #static-pages-header nav ul li:nth-last-child(1)::after {
         content: '';
         display: table;
         clear: both; }
+
+@media only screen and (max-width: 980px) {
+  #pc-nav {
+    display: none; } }
+
+#sp-nav {
+  display: none; }
+  @media only screen and (max-width: 980px) {
+    #sp-nav {
+      display: block;
+      position: absolute;
+      width: 50px;
+      height: 60px;
+      top: 50%;
+      right: 0;
+      margin-right: 10px;
+      transition-duration: .4s;
+      cursor: pointer;
+      z-index: 9999;
+      margin-top: -30px; }
+      #sp-nav .icon {
+        transition-duration: 125ms;
+        position: absolute;
+        width: 21px;
+        height: 2px;
+        top: 28px;
+        left: 15px;
+        background-color: #fff; }
+        #sp-nav .icon:before, #sp-nav .icon:after {
+          transition-duration: 125ms;
+          position: absolute;
+          width: 21px;
+          height: 2px;
+          background-color: #fff;
+          content: ""; }
+        #sp-nav .icon:before {
+          top: -9px;
+          left: 0; }
+        #sp-nav .icon:after {
+          top: 9px;
+          left: 0; }
+      #sp-nav.open {
+        transition-duration: .3s;
+        transform: rotate(180deg); }
+        #sp-nav.open .icon {
+          transition-duration: 0.4s;
+          background-color: transparent; }
+          #sp-nav.open .icon:before {
+            transition-duration: 0.4s;
+            top: 0;
+            transform: rotate(45deg); }
+          #sp-nav.open .icon:after {
+            transition-duration: 0.4s;
+            top: 0;
+            transform: rotate(-45deg); } }
 
 #static-pages-header::after {
   content: '';
@@ -978,4 +1036,7 @@ template {
   min-height: 100%;
   min-width: 100%;
   background-image: url(./images/background.jpg);
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover; }
