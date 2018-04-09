@@ -1,0 +1,37 @@
+@charset "utf-8";
+// two-column page
+
+// variables
+$left-column-rate: 50%;
+$right-column-rate: 50%;
+
+#page--top {
+  main {
+    .two-column {
+      // position: fixed;
+      min-height: 100%;
+      min-width: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      background-size: cover;
+
+        
+      .left-column {
+        float: left;
+        height: 500px;
+        width: $left-column-rate;
+
+        background-color: $red;
+        text-align: center;
+      }
+      .right-column {
+        float: left;
+        height: 500px;
+        width: $right-column-rate; 
+        background-color: $dblue;
+        text-align: center;
+      }
+    }
+  }
+}
