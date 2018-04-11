@@ -2,35 +2,65 @@
 // two-column page
 
 // variables
-$left-column-rate: 50%;
-$right-column-rate: 50%;
-$two-column-height: 500pt;
+$left-column-rate: 30%;
+$right-column-rate: 70%;
+$two-column-height: 600px;
+$menu-list-width: 300px;
 
 #page--top {
   main {
     section.two-column {
+      padding-top: 83px;
       height: $two-column-height;
       width: 100%; 
-        
+
       div.left-column {
         float: left;
         height: 100%;
-        width: $left-column-rate;
+        // width: $left-column-rate;
+        width: $menu-list-width; 
         background-color: $red;
 
+        div#menu-list {
+          background-color: #ddd;
+          padding: 20px;
+          margin: 20px;
+        }
+        // 中型端末用表示
         @include mediaquery_w($bp_05 + px) {
           background-color: $dblue;
         }
+
+        // 小型端末用表示
+        @include mediaquery_w($bp_09 + px) {
+          
+        }
         
       }
+
       div.right-column {
         float: left;
         height: 100%;
-        width: $right-column-rate; 
+        // width: $right-column-rate; 
+        width: $bp_05 - 300 + px; 
+        
         background-color: $dblue;
 
+        div.content {
+          background-color: #eee;
+          padding: 20px;
+          margin: 20px;
+
+        }
+
+        // 中型端末用表示
         @include mediaquery_w($bp_05 + px) {
           background-color: $red;
+        }
+        
+        // 小型端末用表示
+        @include mediaquery_w($bp_09 + px) {
+
         }
 
       }
