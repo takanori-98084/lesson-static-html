@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+#page--games{
+  min-width: 700px;
+  overflow-x: scroll;
+  .user-input-area {
+    text-align: center;
+    padding: 10px;
+    div {
+      margin: 10px 0;
+    }
+    button {
+      display: inline-block;
+      text-decoration: none;
+      color: #668ad8;
+      width: 120px;
+      height: 120px;
+      line-height: 120px;
+      border-radius: 50%;
+      border: double 4px #668ad8;
+      text-align: center;
+      vertical-align: middle;
+      overflow: hidden;
+      transition: .6s;
+      outline: 0;
+      &:hover {
+        transform: rotateY(360deg);
+      }
+    }
+  }
+  
+  .game-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .output-area {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      width: 400px;
+      height: 400px;
+      background-color: azure;
+    }
+  }
+  .template {
+    display: none !important;
+  }
+  .chip {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 80px;
+    height: 80px;
+    background-color: #333;
+    &:hover{
+      opacity: 0.5;
+    }
+  }
+  .light {
+    background-color: aliceblue !important;
+  }
+}
