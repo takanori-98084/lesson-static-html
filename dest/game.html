@@ -11,23 +11,45 @@
     </script>
   </head>
   <body id='page--games'>
-    <!-- Userから入力を受け取る -->
-    <section class='user-input-area'>
-      <div>
-        <button id='create_btn'>CREATE</button>
+    <header id='static-pages-header'>
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/static-logo.svg" alt="logo" >
+        </a>
       </div>
-    </section>
-    <hr>
-    <!-- ライツアウトを出力する -->
-    <section class='game-area'>
-      <div class='output-area'></div>
-    </section>
-    <hr>
-    <!-- テンプレート -->
-    <section>
-      <div class='template chip'>
-      </div>
-    </section>
+      <nav>
+        <div id="pc-nav">
+          <ul>
+            <li><a href="#">2 Column</a></li>
+            <li><a href="game.html">JS-Games</a></li>
+            <li><a href="#">Responsive</a></li>
+          </ul>
+        </div>
+        <div id="sp-nav">
+          <div class="icon">
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Userから入力を受け取る -->
+      <section class='user-input-area'>
+        <div>
+          <button id='create_btn'>CREATE</button>
+        </div>
+      </section>
+      <hr>
+      <!-- ライツアウトを出力する -->
+      <section class='game-area'>
+        <div class='output-area'></div>
+      </section>
+      <hr>
+      <!-- テンプレート -->
+      <section>
+        <div class='template chip'>
+        </div>
+      </section>
+    </main>
   </body>
   <script src="js/game.js"></script>
 </html>
