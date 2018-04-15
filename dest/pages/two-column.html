@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Two-Column Page</title>
-    <link rel='stylesheet' href='/style.css'>
+    <link rel='stylesheet' href='../style.css'>
     <script
       src="https:code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -11,12 +11,12 @@
     </script>
   </head>
 
-  <body id='page--top'>
+  <body id='page--two-column'>
 
     <header id='static-pages-header'>
       <div class="logo">
-        <a href="/index.html">
-          <img src="/images/static-logo.svg" alt="logo" >
+        <a href="../index.html">
+          <img src="../images/static-logo.svg" alt="logo" >
         </a>
       </div>
       <nav>
@@ -35,9 +35,9 @@
     </header>
    
     <main>
-      <section id='two-column'>
-        <div id="left-column">
-          <div id="menu-list">
+      <section class='two-column'>
+        <div class="left-column">
+          <div class="menu-list">
             <h3> menu list </h3>
             <ul>
               <li><a href='#'>menu #1</a></li>
@@ -45,14 +45,14 @@
               <li><a href='#'>menu #3</a></li>
             </ul>
           </div>
-          <div id="menu-icon">
+          <div class="menu-icon">
             <a href="#">
-             <img src="/images/menu-icon.svg" alt="menu-icon">
+             <img src="../images/menu-icon.svg" alt="menu-icon">
            </a>
           </div>
         </div>
 
-        <div id="right-column">
+        <div class="right-column">
           <div class="content">
             <h3>content #1</h3>
             <p>............</p>
@@ -84,7 +84,7 @@
       </small>
     </footer>
 
-    <script src="/js/index.js"></script>
+    <script src="../js/index.js"></script>
 
   </body>
 </html>

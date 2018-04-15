@@ -5,9 +5,9 @@
 $normal-menu-width: 250;
 $small-menu-width: 50;
 
-#page--top {
+#page--two-column {
   main {
-    section#two-column {
+    section.two-column {
       height: 100%;
       width: 100%; 
 
@@ -15,7 +15,7 @@ $small-menu-width: 50;
       display: -webkit-flex;
       display: flex;
 
-      div#left-column {
+      div.left-column {
         padding-top: 83px;
         float: left;
         width: $normal-menu-width + px;
@@ -30,7 +30,7 @@ $small-menu-width: 50;
           transition-duration: 0.5s;
         }
 
-        div#menu-list {
+        div.menu-list {
           background-color: #eee;
           padding: 10px;
           margin: 30px;
@@ -48,7 +48,7 @@ $small-menu-width: 50;
           }
         }
 
-        div#menu-icon {
+        div.menu-icon {
           display: none;
 
           @include mediaquery_w($bp_09 + px) {
@@ -63,7 +63,7 @@ $small-menu-width: 50;
         }
       }
 
-      div#right-column {
+      div.right-column {
         padding-top: 83px;
         float: left;
         width: 100%; 
