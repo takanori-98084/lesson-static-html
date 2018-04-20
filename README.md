@@ -5,10 +5,12 @@
 - HTML
   - フルページカラムレイアウト
 - CSS
+  - CSSリセットとその必要性
   - scssの各種機能について
+  - scssのモジュール分割
   - レスポンシブ
 - JS
-  - gulp.js
+  - かんたんなgulp.js
   - jQuery
   - イベントの設定
 - Git
