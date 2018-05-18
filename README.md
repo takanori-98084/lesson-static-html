@@ -19,7 +19,7 @@
 
 ### 宿題1
 #### 宿題A
-- リポジトリをフェッチせよ
+- リポジトリをForkせよ。[備考](https://docs.google.com/presentation/d/1vXgGGzExrFi4H98YlAzjy4eWYFDTxZPRYfByY5UPkJM/edit?usp=sharing)
 - 2カラムレイアウトのページを作成し、top pageからリンクさせよ
 - 可能であれば、レスポンシブ対応を行うこと
 - 本リポジトリをリモートリポジトリに設定し、XXXX-developにプルリクエストを送ること
