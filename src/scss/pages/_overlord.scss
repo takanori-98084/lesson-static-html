@@ -2,31 +2,28 @@
 
 //overlord.html用
 #page--overlord {
-  background-color:#000;
-}
+  background-color:#333;
+  margin: 20px;
 
-#overlord-header{
-  height: 83px;
-  position: absolute;
-  top: 0;
-  z-index: 9999;
-  width: 100%;
-  box-sizing: border-box;
+  #overlord-header{
+    height: 83px;
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    box-sizing: border-box;
 
-  .overlord-title {
-    height: 83px;
-    float: left;
-    width: 386px;
-    height: 83px;
+    .overlord-title {
+      height: 83px;
+      float: left;
+      width: 386px;
+      height: 83px;
     }
   }
-
 
   @include mediaquery_w($bp_05 + px) {
     background-color: #000;
   }
-
-
 
   nav {
     float: right;
@@ -52,4 +49,29 @@
       }
     }
   }
+  
+  main {
+    margin-top: 83px;
+    color: #fefefe;
+
+    .main-title {
+      text-align: center;
+      
+      .over-nav {
+        a {
+          color: #ff3300;
+        }
+      }
+    }
+    
+    .container {
+      display: flex;
+      justify-content: center;
+    
+      .contain {
+        width: 40%
+      }
+    }
+  }
+
 }
