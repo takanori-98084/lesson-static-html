@@ -1,5 +1,5 @@
 @charset "utf-8";
-// サイトに共通のレイアウト
+
 
 // サイトの共通ヘッダ
 #static-pages-header{
@@ -9,7 +9,9 @@
   z-index: 9999;
   width: 100%;
   box-sizing: border-box;
-  
+  .overlord-title {
+    font-size:83px;
+  }
   .logo {
     height: 83px;
     float: left;
@@ -19,15 +21,11 @@
       vertical-align: middle;
       img {
         width: 386px;
-        height: 83px; 
+        height: 83px;
       }
     }
   }
-  
-  @include mediaquery_w($bp_05 + px) {
-    background-color: #333;
-  }
-  
+
   nav {
     float: right;
     ul {
@@ -48,7 +46,7 @@
       li:nth-last-child(1)::after {
         content: '';
         display: table;
-        clear: both;        
+        clear: both;
       }
     }
   }
@@ -72,7 +70,7 @@
     cursor: pointer;
     z-index: 9999;
     margin-top: -30px;
-    
+
     .icon {
       transition-duration: 125ms;
       position: absolute;

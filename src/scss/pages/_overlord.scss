@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+//overlord.html用
+#page--overlord {
+  background-color:#333;
+  margin: 20px;
+
+  #overlord-header{
+    height: 83px;
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    box-sizing: border-box;
+
+    .overlord-title {
+      height: 83px;
+      float: left;
+      width: 386px;
+      height: 83px;
+    }
+  }
+
+  @include mediaquery_w($bp_05 + px) {
+    background-color: #000;
+  }
+
+  nav {
+    float: right;
+    ul {
+      list-style-type: none;
+      li {
+        float: left;
+        display: table;
+        height: 60px;
+        a {
+          position: relative;
+          display: table-cell;
+          vertical-align: middle;
+          padding: 0 22px;
+          color: #FFF;
+          text-decoration: none;
+        }
+      }
+      li:nth-last-child(1)::after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+    }
+  }
+  
+  main {
+    margin-top: 83px;
+    color: #fefefe;
+
+    .main-title {
+      text-align: center;
+      
+      .over-nav {
+        a {
+          color: #ff3300;
+        }
+      }
+    }
+    
+    .container {
+      display: flex;
+      justify-content: center;
+    
+      .contain {
+        width: 40%
+      }
+    }
+  }
+
+}
