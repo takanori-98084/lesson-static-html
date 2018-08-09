@@ -60,4 +60,4 @@ gulp.task("js", function() {
 });
 
 gulp.task("build", ['scss', 'js']);
-gulp.task("server", ['scss', 'js', 'scss-watch', 'js','webserver']);
+gulp.task("server", ['scss', 'js', 'scss-watch', 'js-watch','webserver']);

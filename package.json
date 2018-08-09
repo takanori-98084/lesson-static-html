@@ -17,25 +17,35 @@
   },
   "homepage": "https://github.com/angelica-keiskei/template-basic-gulp#readme",
   "dependencies": {
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-exec": "^3.0.2",
-    "gulp-plumber": "^1.2.0",
-    "gulp-sass": "^3.1.0",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "jquery-sidebar": "^3.3.2"
   },
   "browser": {
     "jquery": "./node_modules/jquery/dist/jquery.js"
   },
   "devDependencies": {
     "browserify": "^16.2.2",
+    "browserify-shim": "^3.8.14",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
     "gulp-clean-css": "^3.10.0",
+    "gulp-exec": "^3.0.2",
     "gulp-load-plugins": "^1.5.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1",
     "gulp-util": "^3.0.8",
     "gulp-webserver": "^0.9.1",
     "through2": "^2.0.3"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "$"
   }
 }
