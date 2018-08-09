@@ -4,8 +4,9 @@ var sass = require("gulp-sass");                  // scss用トランスパイ�
 var autoprefixer = require("gulp-autoprefixer");  // ベンダープレフィックスの自動付与
 var cleanCSS = require('gulp-clean-css');         // CSS圧縮
 var plumber = require("gulp-plumber");            // gulpがエラー起こしても途中で止まらなくするやつ
-
-var ps = require('child_process').exec;           // gulpからコマンドラインを叩くひと
+var $ = require("gulp-load-plugins")();
+var browserify = require("browserify");
+var through2 = require("through2");
 
 gulp.task('webserver', function() {
   gulp.src('./dest')
@@ -25,5 +26,38 @@ gulp.task("scss", function() {
         .pipe(gulp.dest("./dest"));
 });
 
-gulp.task("build", ['scss'])
-gulp.task("server", ['scss', 'webserver'])
+gulp.task('scss-watch', ['scss'], function(){
+    var watcher = gulp.watch('./src/scss/**/*.scss', ['scss']);
+    watcher.on('change', function(event) {
+    });
+});
+
+gulp.task('js-watch', ['js'], function(){
+    var watcher = gulp.watch('./src/js/*.js', ['js']);
+    watcher.on('change', function(event) {
+    });
+});
+
+gulp.task("js", function() {
+    return gulp
+        .src(["src/js/*.js"])
+        .pipe(through2.obj(function(file, encode, callback) {
+            browserify(file.path)
+                .on("error", $.util.log)
+                .bundle(function(err, res) {
+                    if (err) {
+                        $.util.log(err.message);
+                        $.util.log(err.stack);
+                    }
+                    file.contents = res;
+                    callback(null, file);
+                });
+        }))
+        .pipe($.uglify())
+        .pipe($.sourcemaps.init({loadMaps: true}))
+        .pipe($.sourcemaps.write('./'))
+        .pipe(gulp.dest('./dest/js'));
+});
+
+gulp.task("build", ['scss', 'js']);
+gulp.task("server", ['scss', 'js', 'scss-watch', 'js','webserver']);

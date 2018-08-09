@@ -1,3 +1,4 @@
+$ = require('jquery');
 var N = 5;
 var MAX_CHIPS = N * N;
 

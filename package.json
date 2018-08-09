@@ -17,15 +17,25 @@
   },
   "homepage": "https://github.com/angelica-keiskei/template-basic-gulp#readme",
   "dependencies": {
-    "child_process": "^1.0.2",
-    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
-    "gulp-exec": "^3.0.1",
+    "gulp-exec": "^3.0.2",
     "gulp-plumber": "^1.2.0",
     "gulp-sass": "^3.1.0",
-    "gulp-webserver": "^0.9.1"
+    "jquery": "^3.3.1"
+  },
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js"
   },
   "devDependencies": {
-    "gulp-clean-css": "^3.9.3"
+    "browserify": "^16.2.2",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "gulp-util": "^3.0.8",
+    "gulp-webserver": "^0.9.1",
+    "through2": "^2.0.3"
   }
 }
