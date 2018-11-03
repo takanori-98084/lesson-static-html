@@ -1,5 +1,5 @@
 var gulp = require("gulp");                       // タスクランナー
-var webserver = require('gulp-webserver');        // 簡易web server
+var browserSync = require('browser-sync');
 var sass = require("gulp-sass");                  // scss用トランスパイラ
 var autoprefixer = require("gulp-autoprefixer");  // ベンダープレフィックスの自動付与
 var cleanCSS = require('gulp-clean-css');         // CSS圧縮
@@ -8,17 +8,23 @@ var $ = require("gulp-load-plugins")();
 var browserify = require("browserify");
 var through2 = require("through2");
 
-gulp.task('webserver', function() {
-  gulp.src('./dest')
-    .pipe(webserver({
-      livereload: true, // 差分が発生したらリロードする
-      open: true,       // サーバーが立ったら自動で開く
-      port: 3002
-    }));
+gulp.task('browser-sync', () => {
+    return browserSync({
+      server: {
+           baseDir: "./dest"       //ルートディレクトリ
+          ,index  : "index.html"   //インデックスファイル
+      },  
+      open: 'external',
+      open: 3000
+  }); 
 });
 
-gulp.task("scss", function() {
-    gulp.src("./src/scss/**/*.scss")
+gulp.task('bs-reload', () => {
+    browserSync.reload();
+});
+
+gulp.task("scss", () => {
+    return gulp.src("./src/scss/**/*.scss")
         .pipe(plumber())
         .pipe(sass())
         .pipe(autoprefixer())
@@ -26,19 +32,7 @@ gulp.task("scss", function() {
         .pipe(gulp.dest("./dest"));
 });
 
-gulp.task('scss-watch', ['scss'], function(){
-    var watcher = gulp.watch('./src/scss/**/*.scss', ['scss']);
-    watcher.on('change', function(event) {
-    });
-});
-
-gulp.task('js-watch', ['js'], function(){
-    var watcher = gulp.watch('./src/js/*.js', ['js']);
-    watcher.on('change', function(event) {
-    });
-});
-
-gulp.task("js", function() {
+gulp.task("js", () => {
     return gulp
         .src(["src/js/*.js"])
         .pipe(through2.obj(function(file, encode, callback) {
@@ -59,5 +53,11 @@ gulp.task("js", function() {
         .pipe(gulp.dest('./dest/js'));
 });
 
-gulp.task("build", ['scss', 'js']);
-gulp.task("server", ['scss', 'js', 'scss-watch', 'js-watch','webserver']);
+gulp.task('watch', () => {
+  gulp.watch("./src/**/*.js", gulp.task('js'));
+  gulp.watch("./src/scss/**/*.scss", gulp.task('scss'));
+  gulp.watch(['./dest/**/*.html', './dest/**/*.css', './dest/**/*.js'], gulp.task('bs-reload'));
+});
+
+gulp.task("build", gulp.series( gulp.parallel('scss', 'js')));
+gulp.task("server", gulp.series( gulp.parallel('browser-sync', 'watch')));

@@ -24,10 +24,11 @@
     "jquery": "./node_modules/jquery/dist/jquery.js"
   },
   "devDependencies": {
+    "browser-sync": "^2.26.3",
     "browserify": "^16.2.2",
     "browserify-shim": "^3.8.14",
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-clean-css": "^3.10.0",
     "gulp-exec": "^3.0.2",
@@ -37,7 +38,6 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1",
     "gulp-util": "^3.0.8",
-    "gulp-webserver": "^0.9.1",
     "through2": "^2.0.3"
   },
   "browserify": {
