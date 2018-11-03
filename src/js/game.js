@@ -6,7 +6,6 @@ function lights_out(num) {
   var parent = $('.output-area')[0];
   var chips = $(parent).children();
   var index = num - 1;
-  debugger;
 
   //now
   $(chips[index]).toggleClass('light');  
