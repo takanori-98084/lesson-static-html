@@ -28,7 +28,7 @@ gulp.task("scss", () => {
         .pipe(plumber())
         .pipe(sass())
         .pipe(autoprefixer())
-        .pipe(cleanCSS())
+//        .pipe(cleanCSS())  CSSの圧縮。デバッグ用途に向かないのでコメントアウト
         .pipe(gulp.dest("./dest"));
 });
 
@@ -47,9 +47,10 @@ gulp.task("js", () => {
                     callback(null, file);
                 });
         }))
-        .pipe($.uglify())
-        .pipe($.sourcemaps.init({loadMaps: true}))
-        .pipe($.sourcemaps.write('./'))
+//        JSの難読化、圧縮。デバッグに向かないのでコメントアウト
+//        .pipe($.uglify())
+//        .pipe($.sourcemaps.init({loadMaps: true}))
+//        .pipe($.sourcemaps.write('./'))
         .pipe(gulp.dest('./dest/js'));
 });
 
